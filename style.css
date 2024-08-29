@@ -1,0 +1,109 @@
+/* style.css */
+#ai-highlight-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+#ai-highlight-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  color: transparent;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#ai-highlight-button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#ai-highlight-button:hover {
+  transform: scale(1.1);
+}
+
+#ai-highlight-button.highlighting {
+  animation: pulse 1.5s infinite;
+}
+
+#ai-highlight-button.highlighted {
+  background-color: #FFA500;
+}
+
+#ai-highlight-button.highlighted::before {
+  width: 8px;
+  height: 8px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Tooltip styles */
+#ai-highlight-button-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 10px;
+}
+
+#ai-highlight-button:hover #ai-highlight-button-tooltip {
+  opacity: 1;
+}
+
+.ai-highlight-keyword {
+  background-color: rgba(255, 255, 0, 0.3); /* 淡黃色半透明背景 */
+  border-bottom: 2px solid rgba(255, 165, 0, 0.7); /* 橙色下劃線 */
+  padding: 0 2px; /* 添加一些內邊距 */
+  border-radius: 2px; /* 輕微圓角 */
+  transition: background-color 0.3s ease; /* 平滑過渡效果 */
+}
+
+.ai-highlight-keyword:hover {
+  background-color: rgba(255, 255, 0, 0.5); /* 懸停時稍微加深背景 */
+}
+
+/* 可選：為深色主題網站調整樣式 */
+@media (prefers-color-scheme: dark) {
+  .ai-highlight-keyword {
+    background-color: rgba(255, 255, 0, 0.2); /* 深色主題下更淡的背景 */
+    border-bottom: 2px solid rgba(255, 165, 0, 0.5); /* 深色主題下更淡的下劃線 */
+  }
+  
+  .ai-highlight-keyword:hover {
+    background-color: rgba(255, 255, 0, 0.3); /* 深色主題下懸停時的背景 */
+  }
+}
