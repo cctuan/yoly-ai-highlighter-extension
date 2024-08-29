@@ -1,33 +1,82 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# Yoly Highlight Chrome Extension
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Yoly Highlight is a powerful Chrome extension that leverages OpenAI's GPT model to intelligently highlight important content on web pages. This tool is designed to help users quickly identify and understand key information, enhancing reading efficiency.
 
-```bash
-pnpm dev
-# or
+## Features
+
+- Smart Highlighting: Automatically identifies and highlights important text and phrases on web pages.
+- Customizable System Prompt: Allows users to customize the AI model's system prompt for better control over highlighting behavior.
+- Minimalist UI: A small floating button that doesn't interfere with the browsing experience.
+- Toggle Highlighting: Easily turn highlighting on and off.
+- Dark Mode Compatible: Automatically adjusts highlight styles to suit dark-themed websites.
+
+## Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/cctuan/yoly-ai-highlighter-extension.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd yoly-ai-highlighter-extension
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Build the extension:
+   ```
+   npm run build
+   ```
+
+## Loading the Extension in Chrome
+
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable "Developer mode" in the top right corner
+3. Click "Load unpacked"
+4. Select the extension's build directory (typically `build/chrome-mv3-prod/`)
+
+## Usage Instructions
+
+1. After installation, you'll see a new icon in Chrome's top-right corner.
+2. Click the icon to open the settings page and enter your OpenAI API key.
+3. Browse any webpage, and you'll see a small circular button in the bottom-right corner.
+4. Click the button to start the AI analysis and highlighting process.
+5. Click the button again to remove the highlights.
+
+## Configuration
+
+In the extension's settings page, you can:
+
+- Enter your OpenAI API key
+- Customize the system prompt to control the AI's highlighting behavior
+
+## Development
+
+This project is developed using the Plasmo framework. Key files include:
+
+- `content.ts`: Contains content script logic
+- `options.tsx`: React component for the settings page
+- `style.css`: Defines the extension's styles
+
+To run the extension in development mode:
+
+```
 npm run dev
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+## Contributing
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+Pull requests are welcome to improve the extension. Before submitting, please ensure your code adheres to the existing coding style and passes all tests.
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
+## License
 
-## Making production build
+## Contact
 
-Run the following:
+For any questions or suggestions, please open an issue or contact the project maintainer directly.
 
-```bash
-pnpm build
-# or
-npm run build
-```
+---
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
-
-## Submit to the webstores
-
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+Thank you for using the AI Highlight Chrome Extension!
